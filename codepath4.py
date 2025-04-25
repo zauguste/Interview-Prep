@@ -3,20 +3,20 @@
 # # # Write a function is_prime() that takes in a positive integer n and returns True if it is a prime number and False otherwise. 
 # # # A prime number is a number greater than 1 that has no positive divisors other than 1 and itself.
 
-# # def is_prime(n):
-# #     positiveDivisor = 1
-# #     while positiveDivisor < n:#1 < 5: true
-# #         if n%positiveDivisor == 0 and positiveDivisor > 1:#if 1 %  == 0 and 1 > 1 - false,9%2 == 0: F and 2 > 1,9%3 == 0: T and 3 > 1
-# #             # return False
-# #             return False
-# #         positiveDivisor += 1 #2,3
-# #     return True
+def is_prime(n):
+    positiveDivisor = 1
+    while positiveDivisor < n:#1 < 5: true
+        if n%positiveDivisor == 0 and positiveDivisor > 1:#if 1 %  == 0 and 1 > 1 - false,9%2 == 0: F and 2 > 1,9%3 == 0: T and 3 > 1
+            # return False
+            return False
+        positiveDivisor += 1 #2,3
+    return True
 
 # # # Example Usage:
 
-# # print(is_prime(5)) 
-# # print(is_prime(12))# 12//12 == 1 and 12//1 == 5 12/2
-# # print(is_prime(9)) 
+print(is_prime(5)) 
+print(is_prime(12))# 12//12 == 1 and 12//1 == 5 12/2
+print(is_prime(9)) 
 # # Example Output:
 
 # # True
@@ -337,35 +337,7 @@
 
 
 # helper
-def alph(val) -> bool: 
-    return (ord('a') <= ord(val) <= ord('z')) or ord('A') <= ord(val) <= ord('Z') or (ord('0') <= ord(val) <= ord('9'))
-
-
-def is_palindrome(s) -> bool:
-    l = 0 #start at 0
-    r = len(s)-1 #start at 12
-    while l<r:
-        while l < r and not alph(s[l]):
-              #increment the left pointer
-            l+=1
-        while r > l and not alph(s[r]):
-              #decrement the right pointer
-            r-=1
-        if s[r] != s[l]:
-            return False
-        l+=1
-        r-=1
-    return True
-# Example Usage:
-
-s = "amanaplanacanalpanama"
-#       |                 |
-s2 = "helloworld"
-
-print(is_palindrome(s))
-print(is_palindrome(s2))
-# Example Output:
-
+# 
 # True
 # False
 # 💡 Hint: Two Pointer Technique
