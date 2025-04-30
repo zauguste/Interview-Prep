@@ -3,20 +3,20 @@
 # # # Write a function is_prime() that takes in a positive integer n and returns True if it is a prime number and False otherwise. 
 # # # A prime number is a number greater than 1 that has no positive divisors other than 1 and itself.
 
-def is_prime(n):
-    positiveDivisor = 1
-    while positiveDivisor < n:#1 < 5: true
-        if n%positiveDivisor == 0 and positiveDivisor > 1:#if 1 %  == 0 and 1 > 1 - false,9%2 == 0: F and 2 > 1,9%3 == 0: T and 3 > 1
-            # return False
-            return False
-        positiveDivisor += 1 #2,3
-    return True
+# def is_prime(n):
+#     positiveDivisor = 1
+#     while positiveDivisor < n:#1 < 5: true
+#         if n%positiveDivisor == 0 and positiveDivisor > 1:#if 1 %  == 0 and 1 > 1 - false,9%2 == 0: F and 2 > 1,9%3 == 0: T and 3 > 1
+#             # return False
+#             return False
+#         positiveDivisor += 1 #2,3
+#     return True
 
-# # # Example Usage:
+# # # # Example Usage:
 
-print(is_prime(5)) 
-print(is_prime(12))# 12//12 == 1 and 12//1 == 5 12/2
-print(is_prime(9)) 
+# print(is_prime(5)) 
+# print(is_prime(12))# 12//12 == 1 and 12//1 == 5 12/2
+# print(is_prime(9)) 
 # # Example Output:
 
 # # True
@@ -356,6 +356,12 @@ print(is_prime(9))
 
 # 💡 Hint: Big O (Time & Space Complexity)
 
+
+
+
+
+
+
 # Problem 4: Make Palindromes
 # You are given a string s consisting of lowercase English letters,
 #  and are allowed to perform operations on it. 
@@ -369,29 +375,67 @@ print(is_prime(9))
 
 # The function returns the resulting palindrome string.
 
-# def make_palindrome(s):
-#     pass
+# notes:understand: we want to go through the string and retrieve the letter that is going to make the string a palidrome
+# match: we can utilize the two pointer technique to do this.
+# plan: 
+# 1. starting at both ends of the string
+# 2. compare if same:  work inwards
+            # else: change left to right
+            #   
+#   efcfe: 
+#    | |
+# 
+
+
+def make_palindrome(s) -> str:
+    
+    sArr = []
+    for i in s:
+        sArr.append(i)
+
+    l = 0
+    r = len(sArr)-1
+    while l <= r:
+        if sArr[l] != sArr[r]:
+            # check if lexilogically smaller else s[r] = s[l]
+            if ord(sArr[r]) > ord(sArr[l]):
+                sArr[r] = sArr[l]
+            else:
+                sArr[l] = sArr[r]
+        else:
+            l+=1
+            r-=1
+    s = "".join(sArr)
+    # space - o(n^2) time- o(n)
+    return s
 # Example 1:
 
 # s = "egcfe"
-# s_pal = make_palindrome(s_pal)
-# # s_pal == "efcfe"
+# s_pal = make_palindrome(s)
+# print(s_pal)
+# print(s_pal == "efcfe")
 # # The min number of operations to make s a palindrome is 1 by changing `f` to `g`
 # # another palindrome possible is "egcge", but it is not lexicographically smaller
 # Example 2:
 
 # s = "abcd"
-# s_pal = make_palindrome(s_pal)
-# # s_pal == "abba"
+# s_pal = make_palindrome(s)
+# print(s_pal)
+# print(s_pal == "abba")
 # # The min number of operations to make s a palindrome is 2 by changing `c` to `b` and `d` to `a`
 # # a palindrome cannot be created in 1 operation
 # Example 3:
 
-# s = "seven"
-# s_pal = make_palindrome(s_pal)
-# # s_pal == "neven"
-# # The min number of operations to make s a palindrome is 1 by changing `s` to `n`
-# # to get a palindrome that is lexographically smaller, it would take more operations
+s = "seven"
+s_pal = make_palindrome(s)
+print(s_pal == "neven")
+print(s_pal)
+# The min number of operations to make s a palindrome is 1 by changing `s` to `n`
+# to get a palindrome that is lexographically smaller, it would take more operations
+
+# Done
+
+
 
 # Problem 5: Reverse Vowels
 # Write a function reverse_vowel() that takes in a string s as a parameter and returns a string with all the vowels in the string reversed. The consonants should remain in the same position. For this question, we consider a, e, i, o, and u as vowels but not y. The vowels can appear in both lower and upper cases, more than once.
@@ -414,9 +458,18 @@ print(is_prime(9))
 # 💡 Hint: Helper Functions
 
 # Problem 6: Two-Pointer Remove Element
-# The two-pointer approach can also be used with two pointers that iterate forward through a list or string at different rates. Use two pointers to solve the following problem:
+# The two-pointer approach can also be used with two pointers that iterate forward through a list
+#  or string at different rates. Use two pointers to solve the following problem:
 
-# Write a function removeElement() that takes in a list nums and a value val as parameters and removes all instances of that value in-place. The function returns the new length of nums.
+# Write a function removeElement() that takes in a list nums and a value val as parameters and removes 
+# all instances of that value in-place. The function returns the new length of nums.
+
+
+
+# notes
+# we want to remove all instances of a given number
+# using two pointers we can
+
 
 # def removeElement(nums, val):
 #     pass
