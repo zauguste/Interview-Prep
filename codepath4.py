@@ -387,27 +387,27 @@
 # 
 
 
-def make_palindrome(s) -> str:
+# def make_palindrome(s) -> str:
     
-    sArr = []
-    for i in s:
-        sArr.append(i)
+#     sArr = []
+#     for i in s:
+#         sArr.append(i)
 
-    l = 0
-    r = len(sArr)-1
-    while l <= r:
-        if sArr[l] != sArr[r]:
-            # check if lexilogically smaller else s[r] = s[l]
-            if ord(sArr[r]) > ord(sArr[l]):
-                sArr[r] = sArr[l]
-            else:
-                sArr[l] = sArr[r]
-        else:
-            l+=1
-            r-=1
-    s = "".join(sArr)
-    # space - o(n^2) time- o(n)
-    return s
+#     l = 0
+#     r = len(sArr)-1
+#     while l <= r:
+#         if sArr[l] != sArr[r]:
+#             # check if lexilogically smaller else s[r] = s[l]
+#             if ord(sArr[r]) > ord(sArr[l]):
+#                 sArr[r] = sArr[l]
+#             else:
+#                 sArr[l] = sArr[r]
+#         else:
+#             l+=1
+#             r-=1
+#     s = "".join(sArr)
+#     # space - o(n^2) time- o(n)
+#     return s
 # Example 1:
 
 # s = "egcfe"
@@ -426,10 +426,10 @@ def make_palindrome(s) -> str:
 # # a palindrome cannot be created in 1 operation
 # Example 3:
 
-s = "seven"
-s_pal = make_palindrome(s)
-print(s_pal == "neven")
-print(s_pal)
+# s = "seven"
+# s_pal = make_palindrome(s)
+# print(s_pal == "neven")
+# print(s_pal)
 # The min number of operations to make s a palindrome is 1 by changing `s` to `n`
 # to get a palindrome that is lexographically smaller, it would take more operations
 
@@ -438,7 +438,9 @@ print(s_pal)
 
 
 # Problem 5: Reverse Vowels
-# Write a function reverse_vowel() that takes in a string s as a parameter and returns a string with all the vowels in the string reversed. The consonants should remain in the same position. For this question, we consider a, e, i, o, and u as vowels but not y. The vowels can appear in both lower and upper cases, more than once.
+# Write a function reverse_vowel() that takes in a string s as a parameter and returns a string with all
+#  the vowels in the string reversed. The consonants should remain in the same position. 
+# For this question, we consider a, e, i, o, and u as vowels but not y. The vowels can appear in both lower and upper cases, more than once.
 
 # def reverse_vowels(s):
 #     pass
@@ -581,10 +583,25 @@ print(s_pal)
 # xyzxyz
 
 # Problem 6: Squash Spaces
-# The two-pointer approach can also be used with two pointers that iterate forward through a list or string at different rates. Use two pointers to solve the following problem:
+# The two-pointer approach can also be used with 
+# two pointers that iterate forward through a list or 
+# string at different rates. 
+# Use two pointers to solve the following problem:
 
-# Write a function squash_spaces() that takes in a string s as a parameter and returns a new string with each substring with consecutive spaces reduced to a single space. Assume s can contain leading or trailing spaces, but in the result should be trimmed.
+# Write a function squash_spaces() that takes in a
+#  string s as a parameter and returns a new string 
+# with each substring with consecutive spaces reduced 
+# to a single space. 
+# Assume s can contain leading or trailing spaces,
+# but in the result should be trimmed.
+
 # Do not use any of the built-in trim methods.
+# go throufh s if s[l] == " ":
+                    # increment left 
+                # elif s[r]:
+                    # increment right
+                # else:
+#                     sArr.append
 
 # def squash_spaces(s):
 #     pass
