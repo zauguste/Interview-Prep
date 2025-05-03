@@ -6,20 +6,22 @@
 # Pokemon and store it in a variable named my_pokemon. The Pokemon instance created should have name 
 # "Pikachu" and its types should be ["Electric"].
 
-class Pokemon:
-    def __init__(self, name, types):
-        self.name = name
-        self.types = types
-        self.is_caught = False
+# class Pokemon:
+#     def __init__(self, name, types):
+#         self.name = name
+#         self.types = types
+#         self.is_caught = False
 
-my_pokemon = Pokemon("Pickachu",["Electric"])
-# 💡 Hint: Intro to Object Oriented Programming
-print(my_pokemon.types)
-print(my_pokemon.name)
+# my_pokemon = Pokemon("Pickachu",["Electric"])
+# # 💡 Hint: Intro to Object Oriented Programming
+# print(my_pokemon.types)
+# print(my_pokemon.name)
 # Problem 2: Create Squirtle
 # Step 1: Add the print_pokemon definition below to your code on Replit.
 
-# Step 2: Instantiate an instance of the class Pokemon and store it in a variable named squirtle. The Pokemon instance created should have name "Squirtle" and its types should be ["Water"].
+# Step 2: Instantiate an instance of the class Pokemon and store it in a variable named squirtle. 
+# The Pokemon instance created should have name "Squirtle" 
+# and its types should be ["Water"].
 
 # Step 3: Call the method print_pokemon() on your new Pokemon instance squirtle.
 
@@ -35,10 +37,22 @@ print(my_pokemon.name)
 #             "types": self.types, # Output: "types": ["Water"],
 #             "is_caught": self.is_caught # Output: "is_caught": False
 #         })
-# 💡 Hint: Class Methods
+# # 💡 Hint: Class Methods
+
+
+
+
+# # first lets instatiat Pokemon and call it by storing it in a variable pokemon
+
+# # pokemon = Pokemon()
+# # pokemon.print_pokemon
+# Squirtle = Pokemon("Squirtle",["Water"])
+# Squirtle.print_pokemon()
+
 
 # Problem 3: Is Caught
-# Using your code from Problem 2, update your squirtle Pokemon so that is_caught is updated to True. Use the print_pokemon() function to verify that squirtle's is_caught property was updated.
+# Using your code from Problem 2, update your squirtle Pokemon so that is_caught is updated to True. 
+# Use the print_pokemon() function to verify that squirtle's is_caught property was updated.
 
 # Expected Output:
 
@@ -257,18 +271,27 @@ print(my_pokemon.name)
 # Problem 11: Mario Party
 # Create the list ["Mario", "Luigi", "Wario", "Toad"] as a linked list given the Node class:
 
-# class Node:
-# 	def __init__(self, value, next=None):
-# 		self.value = value
-# 		self.next = next
+class Node:
+	def __init__(self, value, next=None):
+		self.value = value
+		self.next = next
 # Result Linked List would be: Mario -> Luigi -> Wario -> Toad
 
 # Example Usage (after completing the problem with variable names node_1, node_2, node_3, and node_4.):
+node_1 = Node("Mario")
+node_2 = Node("Luigi")
+node_3 = Node("Wario")
+node_4 = Node("Toad")
 
-# print(node_1.value, "->", node_1.next.value)
-# print(node_2.value, "->", node_2.next.value)
-# print(node_3.value, "->", node_3.next.value)
-# print(node_4.value, "->", node_4.next)
+
+node_1.next = node_2
+node_2.next = node_3
+node_3.next = node_4
+
+print(node_1.value, "->", node_1.next.value)
+print(node_2.value, "->", node_2.next.value)
+print(node_3.value, "->", node_3.next.value)
+print(node_4.value, "->", node_4.next)
 # Example Output:
 
 # Mario -> Luigi
@@ -287,11 +310,16 @@ print(my_pokemon.name)
 # 		self.next= next
 		
 # def print_linked_list(head):
-# 	pass
-# Example Input:
+# 	while head:
+# 		print(head.cur)
+# 		head = head.next
 
-# # input linked list: a->b->c->d->e
+# # # input linked list: a->b->c->d->e
+# a = Node('a')
+# b = Node('b')
+# c = Node('c')
+# d = Node('d')
 # print_linked_list(a)
-# Example Output:
+# # Example Output:
 
-# a -> b -> c -> d -> e
+# # a -> b -> c -> d -> e
