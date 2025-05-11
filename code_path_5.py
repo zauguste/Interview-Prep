@@ -276,6 +276,10 @@ class Node:
 		self.value = value
 		self.next = next
 # Result Linked List would be: Mario -> Luigi -> Wario -> Toad
+class LinkedList:
+	def __init__(self):
+		self.head = Node(-1)
+		self.tail = self.head
 
 # Example Usage (after completing the problem with variable names node_1, node_2, node_3, and node_4.):
 node_1 = Node("Mario")
