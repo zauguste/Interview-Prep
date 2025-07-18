@@ -1,0 +1,53 @@
+#!/bin/python
+
+import math
+import os
+import random
+import re
+import sys
+import ast
+
+
+
+#
+# Complete the 'count_pairs' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts following parameters:
+#  1. INTEGER_ARRAY nums
+#  2. INTEGER target
+#
+
+def count_pairs(nums, target):
+    # Write your code here
+    # does nums[i] + nums[j] < target?
+    # and does 0 <= i < j < n
+    # when is i < j and j < n?
+    nums.sort()
+    c = 0
+    l = 0
+    r = len(nums)-1
+    while l < r:
+        if nums[l] + nums[r] < target:
+            c += (r-l) 
+            l+=1
+        else:
+            r -=1
+    return c           
+        
+
+if __name__ == '__main__':
+    outfile = open(os.environ['OUTPUT_PATH'], 'w')
+    input_data = sys.stdin.read().strip().splitlines()
+    
+    results = []
+    
+    for line in input_data:
+        # Convert the line to list of lists
+        nums, target = eval(line)
+        result = count_pairs(nums, target)
+        results.append(result)
+    
+    for res in results:
+        outfile.write(str(res) + '\n')
+    outfile.close()
